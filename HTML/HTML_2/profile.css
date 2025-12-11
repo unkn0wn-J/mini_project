@@ -1,0 +1,56 @@
+*{
+    text-align: center;
+}
+
+html{
+    background-color: seashell;
+}
+
+body{
+    width: 640px;
+    margin: auto; /* 너비에서 남는 여백을 동일하게 분배 */
+}
+
+h1{
+    font-size:48px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+    color: #8c6239;
+}
+
+#introduce p {
+    color: #c7ab8f;
+}
+
+#fun-facts strong {
+    color: #c7ab8f;
+}
+
+#fun-facts h2 {
+    color: #8c6239;
+}
+
+#introduce .emphasis {
+    color: #a8733a;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #8c6239; /* 네가 쓰던 브라운 톤 */
+    margin: 20px 0;
+}
