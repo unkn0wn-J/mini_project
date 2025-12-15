@@ -49,14 +49,18 @@ updateAuthUI();
  ********************/
 if (localStorage.getItem("darkMode") === "on") {
   document.body.classList.add("dark");
+  darkBtn.innerText = "White";
+} else {
+  darkBtn.innerText = "Dark";
 }
 
 darkBtn.onclick = () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem(
-    "darkMode",
-    document.body.classList.contains("dark") ? "on" : "off"
-  );
+  const isDark = document.body.classList.toggle("dark");
+
+  localStorage.setItem("darkMode", isDark ? "on" : "off");
+
+  // 버튼 텍스트 변경
+  darkBtn.innerText = isDark ? "White" : "Dark";
 };
 
 /********************
