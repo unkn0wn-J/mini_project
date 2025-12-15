@@ -41,7 +41,7 @@
       <!-- SEARCH -->
       <div class="card my-4">
         <div class="card-body">
-          <form id="searchForm" class="row g-3">
+          <form id="searchForm" class="row g-3 align-items-end">
             <div class="col-md-3">
               <label>카테고리</label>
               <select id="categorySelect" class="form-select">
@@ -52,11 +52,26 @@
                 <option value="패션잡화">패션잡화</option>
               </select>
             </div>
-            <div class="col-md-6">
-              <label>상품명</label>
-              <input id="searchInput" class="form-control" />
+
+            <div class="col-md-2">
+              <label>성별</label>
+              <select id="genderSelect" class="form-select">
+                <option value="">전체</option>
+                <option value="남성">남성</option>
+                <option value="여성">여성</option>
+              </select>
             </div>
-            <div class="col-md-3 d-flex align-items-end">
+
+            <div class="col-md-4">
+              <label>제품명</label>
+              <input
+                id="searchInput"
+                class="form-control"
+                placeholder="제품명을 입력해주세요."
+              />
+            </div>
+
+            <div class="col-md-3">
               <button class="btn btn-primary w-100">조회</button>
             </div>
           </form>

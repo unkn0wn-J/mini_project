@@ -43,6 +43,14 @@ function join(e) {
 
   localStorage.setItem("users", JSON.stringify(users));
 
-  alert("회원가입이 완료되었습니다");
+  alert(
+    `회원가입이 완료되었습니다.
+
+이름 : ${name}
+아이디 : ${id}
+이메일 : ${email}
+성별 : ${gender.value}`
+  );
+
   location.href = "login.html";
 }
