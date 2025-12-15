@@ -1,9 +1,4 @@
 /********************
- * 로그인 상태
- ********************/
-const isLogin = localStorage.getItem("isLogin") === "true";
-
-/********************
  * DOM
  ********************/
 const loginBtn = document.getElementById("loginBtn");
@@ -28,9 +23,11 @@ loginBtn.onclick = () => (location.href = "login.html");
 joinBtn.onclick = () => (location.href = "join.html");
 
 /********************
- * 로그인 UI 처리
+ * 로그인 UI 처리 (✅ 하나만 유지)
  ********************/
 function updateAuthUI() {
+  const isLogin = localStorage.getItem("isLogin") === "true";
+
   loginBtn.classList.toggle("d-none", isLogin);
   joinBtn.classList.toggle("d-none", isLogin);
   logoutBtn.classList.toggle("d-none", !isLogin);
@@ -42,25 +39,19 @@ logoutBtn.onclick = () => {
   location.reload();
 };
 
-updateAuthUI();
-
 /********************
- * 다크모드
+ * 다크모드 (✅ 유지 + 토글 정상화)
  ********************/
-if (localStorage.getItem("darkMode") === "on") {
-  document.body.classList.add("dark");
-  darkBtn.innerText = "White";
-} else {
-  darkBtn.innerText = "Dark";
+function applyDarkMode() {
+  const isDark = localStorage.getItem("darkMode") === "on";
+  document.body.classList.toggle("dark", isDark);
+  darkBtn.innerText = isDark ? "White" : "Dark";
 }
 
 darkBtn.onclick = () => {
-  const isDark = document.body.classList.toggle("dark");
-
-  localStorage.setItem("darkMode", isDark ? "on" : "off");
-
-  // 버튼 텍스트 변경
-  darkBtn.innerText = isDark ? "White" : "Dark";
+  const isDark = document.body.classList.contains("dark");
+  localStorage.setItem("darkMode", isDark ? "off" : "on");
+  applyDarkMode();
 };
 
 /********************
@@ -75,7 +66,7 @@ updateTime();
 setInterval(updateTime, 1000);
 
 /********************
- * 상품 데이터
+ * 상품 데이터 (더미 유지)
  ********************/
 const products = [
   { cat: "상의", brand: "Nike", name: "맨투맨", price: 89000 },
@@ -187,4 +178,6 @@ nextBtn.onclick = () => {
 /********************
  * 최초 실행
  ********************/
+updateAuthUI();
+applyDarkMode();
 render();
