@@ -1,0 +1,22 @@
+/* =========================
+  인증 페이지 공통
+========================= */
+.join-page,
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+}
+
+/* 카드 */
+.card {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* 회원가입은 조금 넓게 */
+.join-page .card {
+  max-width: 520px;
+}

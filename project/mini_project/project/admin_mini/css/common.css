@@ -1,0 +1,105 @@
+/* =========================
+  기본
+========================= */
+body {
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================
+  다크모드
+========================= */
+body.dark {
+  background-color: #0f1115;
+  color: #e6e6e6;
+}
+
+/* 네비 / 카드 */
+body.dark .navbar,
+body.dark .card {
+  background-color: #16181d;
+  border-color: #2a2d34;
+  color: #e6e6e6;
+}
+
+body.dark .navbar-brand {
+  color: #ffffff;
+}
+
+/* =========================
+  폼 요소
+========================= */
+body.dark input,
+body.dark select,
+body.dark textarea,
+body.dark .form-control,
+body.dark .form-select {
+  background-color: #1e2128;
+  color: #ffffff;
+  border-color: #343840;
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+  color: #aaaaaa;
+}
+
+body.dark input:focus,
+body.dark select:focus,
+body.dark textarea:focus {
+  border-color: #666;
+  box-shadow: none;
+}
+
+/* =========================
+  테이블
+========================= */
+body.dark .table {
+  --bs-table-bg: #16181d;
+  --bs-table-color: #e6e6e6;
+  --bs-table-border-color: #2a2d34;
+}
+
+body.dark tbody td {
+  background-color: #16181d;
+}
+
+body.dark .table-hover tbody tr:hover {
+  background-color: #22252c;
+}
+
+.text-muted td {
+  font-style: italic;
+}
+
+/* =========================
+  페이지네이션
+========================= */
+body.dark .page-link {
+  background-color: #16181d;
+  color: #e6e6e6;
+  border-color: #343840;
+}
+
+body.dark .page-item.active .page-link {
+  background-color: #2f333d;
+}
+
+/* =========================
+  버튼
+========================= */
+body.dark #darkModeBtn {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* =========================
+  관리자 페이지 보조
+========================= */
+.table-wrapper {
+  min-height: 260px;
+}
+
+nav {
+  min-height: 56px;
+}
